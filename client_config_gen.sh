@@ -20,7 +20,7 @@ cd /etc/easy-rsa #change to easy-rsa dir
 mkdir /etc/openvpn/client/${1} #make dir for client files
 cp -rp /etc/easy-rsa/pki/{issued/${1}.crt,private/${1}.key} ${CLIENT_DIR}/${1} #copy client certs to openvpn client dir
 
-#tls-crypt-v2 or tls-crypt
+# change the inline field tls-crypt-v2 or tls-crypt for ta2 or ta ddos protection
 cat ${BASE_CONFIG} \
     <(echo -e '<ca>') \
     ${KEY_DIR}/ca.crt \
